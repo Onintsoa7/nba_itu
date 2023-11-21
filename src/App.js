@@ -4,15 +4,14 @@ import './App.css';
 import './css/style.css';
 
 function App() {
-  const PlayerTable = () => {
-    const [playerData, setPlayerData] = useState([]);
-  
-    useEffect(() => {
-      axios.get('https://catfact.ninja/fact')
-        .then(response => setPlayerData(response.data))
-        .catch(error => console.error('Error fetching data:', error));
-    }, []); 
-  
+  const [playerData, setPlayerData] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://catfact.ninja/fact')
+      .then(response => setPlayerData([response.data]))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
   return (
     <section class="ftco-section">
       <div class="container">
@@ -42,10 +41,10 @@ function App() {
                   </tr>
                 </thead>
                 <tbody>
-                {playerData.map(player => (
-                <tr>
-                  <td>{player.fact}</td>
-                  {/* <td>{player.joueur}</td>
+                  {playerData.map(player => (
+                    <tr key={player.id}>
+                      <td>{player.fact}</td>
+                       {/* <td>{player.joueur}</td>
                   <td>{player.equipe}</td>
                   <td>{player.minutes}</td>
                   <td>{player.minute_jouee}</td>
@@ -56,8 +55,8 @@ function App() {
                   <td>{player.pourcentage}</td>
                   <td>{player.troispts}</td>
                   <td>{player.lancerfront}</td> */}
-                </tr>
-                ))}
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -66,6 +65,6 @@ function App() {
       </div>
     </section>
   );
-}}
+}
 
 export default App;
