@@ -17,42 +17,23 @@ function App() {
               <table class="table">
                 <thead class="thead-primary">
                   <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email Address</th>
+                    <th>CLASSEMENT</th>
+                    <th>JOUEUR</th>
+                    <th>EQUIPE</th>
+                    <th>MINUTES</th>
+                    <th>MINUTE_JOUEE</th>
+                    <th>POINT_PAR_MATCH</th>
+                    <th>REPOND_PAR_MATCH</th>
+                    <th>PASSE_DECISSIVE_PAR_MATCH</th>
+                    <th>MINUTE_PAR_MATCH</th>
+                    <th>POURCENTAGE</th>
+                    <th>3PTS</th>
+                    <th>LANCERFRONT</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>markotto@email.com</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>jacobthornton@email.com</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>larrybird@email.com</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>johndoe@email.com</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Gary</td>
-                    <td>Bird</td>
-                    <td>garybird@email.com</td>
+                    
                   </tr>
                 </tbody>
               </table>
