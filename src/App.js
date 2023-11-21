@@ -1,14 +1,57 @@
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './App.css';
-import './css/style.css'
+import './css/style.css';
 
 function App() {
+  const PlayerTable = () => {
+    const staticData = [
+      { 
+        id: 1, 
+        classement: 1, 
+        joueur: 'Player 1', 
+        equipe: 'Team A', 
+        minutes: 120, 
+        minute_jouee: 110, 
+        point_par_match: 25, 
+        repond_par_match: 8, 
+        passe_decissive_par_match: 5, 
+        minute_par_match: 32, 
+        pourcentage: 60, 
+        troispts: 10, 
+        lancerfront: 80 
+      },
+      { 
+        id: 2, 
+        classement: 2, 
+        joueur: 'Player 2', 
+        equipe: 'Team B', 
+        minutes: 110, 
+        minute_jouee: 100, 
+        point_par_match: 22, 
+        repond_par_match: 6, 
+        passe_decissive_par_match: 4, 
+        minute_par_match: 28, 
+        pourcentage: 55, 
+        troispts: 8, 
+        lancerfront: 85 
+      },
+      // Add more static data as needed
+    ];
+    // const [playerData, setPlayerData] = useState([]);
+  
+    // useEffect(() => {
+    //   axios.get('your_web_service_url')
+    //     .then(response => setPlayerData(response.data))
+    //     .catch(error => console.error('Error fetching data:', error));
+    // }, []); 
+  
   return (
     <section class="ftco-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6 text-center mb-5">
-            <h2 class="heading-section">Table #01</h2>
+            <h2 class="heading-section">Statistique NBA</h2>
           </div>
         </div>
         <div class="row">
@@ -32,9 +75,22 @@ function App() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    
-                  </tr>
+                {staticData.map(player => (
+                <tr key={player.id}>
+                  <td>{player.classement}</td>
+                  <td>{player.joueur}</td>
+                  <td>{player.equipe}</td>
+                  <td>{player.minutes}</td>
+                  <td>{player.minute_jouee}</td>
+                  <td>{player.point_par_match}</td>
+                  <td>{player.repond_par_match}</td>
+                  <td>{player.passe_decissive_par_match}</td>
+                  <td>{player.minute_par_match}</td>
+                  <td>{player.pourcentage}</td>
+                  <td>{player.troispts}</td>
+                  <td>{player.lancerfront}</td>
+                </tr>
+                ))}
                 </tbody>
               </table>
             </div>
@@ -43,6 +99,6 @@ function App() {
       </div>
     </section>
   );
-}
+}}
 
 export default App;
