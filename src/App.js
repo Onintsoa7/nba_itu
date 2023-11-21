@@ -5,46 +5,13 @@ import './css/style.css';
 
 function App() {
   const PlayerTable = () => {
-    const staticData = [
-      { 
-        id: 1, 
-        classement: 1, 
-        joueur: 'Player 1', 
-        equipe: 'Team A', 
-        minutes: 120, 
-        minute_jouee: 110, 
-        point_par_match: 25, 
-        repond_par_match: 8, 
-        passe_decissive_par_match: 5, 
-        minute_par_match: 32, 
-        pourcentage: 60, 
-        troispts: 10, 
-        lancerfront: 80 
-      },
-      { 
-        id: 2, 
-        classement: 2, 
-        joueur: 'Player 2', 
-        equipe: 'Team B', 
-        minutes: 110, 
-        minute_jouee: 100, 
-        point_par_match: 22, 
-        repond_par_match: 6, 
-        passe_decissive_par_match: 4, 
-        minute_par_match: 28, 
-        pourcentage: 55, 
-        troispts: 8, 
-        lancerfront: 85 
-      },
-      // Add more static data as needed
-    ];
-    // const [playerData, setPlayerData] = useState([]);
+    const [playerData, setPlayerData] = useState([]);
   
-    // useEffect(() => {
-    //   axios.get('your_web_service_url')
-    //     .then(response => setPlayerData(response.data))
-    //     .catch(error => console.error('Error fetching data:', error));
-    // }, []); 
+    useEffect(() => {
+      axios.get('https://catfact.ninja/fact')
+        .then(response => setPlayerData(response.data))
+        .catch(error => console.error('Error fetching data:', error));
+    }, []); 
   
   return (
     <section class="ftco-section">
@@ -75,10 +42,10 @@ function App() {
                   </tr>
                 </thead>
                 <tbody>
-                {staticData.map(player => (
-                <tr key={player.id}>
-                  <td>{player.classement}</td>
-                  <td>{player.joueur}</td>
+                {playerData.map(player => (
+                <tr>
+                  <td>{player.fact}</td>
+                  {/* <td>{player.joueur}</td>
                   <td>{player.equipe}</td>
                   <td>{player.minutes}</td>
                   <td>{player.minute_jouee}</td>
@@ -88,7 +55,7 @@ function App() {
                   <td>{player.minute_par_match}</td>
                   <td>{player.pourcentage}</td>
                   <td>{player.troispts}</td>
-                  <td>{player.lancerfront}</td>
+                  <td>{player.lancerfront}</td> */}
                 </tr>
                 ))}
                 </tbody>
